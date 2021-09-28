@@ -1,0 +1,24 @@
+
+
+#-----------------------------------------------------------------------------------#
+gene_file: ./data/TopMED/GeneType_GRCh38p13.txt
+TopMedData_dir: ./data/TopMED/
+GWAS_dir: './data/TopMED/GWAS_catalogue/'
+omim_file: './data/TopMED/MD_Genes_updated_df.txt'
+exome_file: './data/TopMED/Exome_genes.txt'
+results_dir: ./results/
+
+
+# # #PPI
+ppi_file: ./data/Protein/i2d.2_9.Public.HUMAN.tab
+protein_gene_file: ./data/Protein/uniprot_gene.tab
+
+
+#Extracting SNP locations from Ensembl:
+#first extract gwasrows given pubid - save as "phenotype_GWAScat.txt", in data dir
+#then, extract the rsid lists:
+#utils_data.GWAScat_rows(phenotype_list, GWAS_dir, TopMedData_dir)
+#output saved as "phenotype + _GWAScat_rsid.txt" in data/GWAS_catalogue
+#next, upload this list/file to ensembl to download location file
+#Make sure to use GRCh38.p13 version and under Filters {Variant source: sbSNP, Variant name: choose file}
+#name downloaded location file as "phenotype_GWAScat_rsid_GRCh38p13.txt", MAKE sure tsv! save in data dir
