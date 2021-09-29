@@ -1,6 +1,6 @@
-#TopMed
-#create virtual environment:
-sh venv.sh
+#TopMed \
+#create virtual environment:\
+sh venv.sh\
 
 #1 full run 
 #run gene_selection algorithm 
