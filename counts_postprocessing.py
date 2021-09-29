@@ -124,7 +124,6 @@ indecisive_genes = indecisive_df['gene'].values
 
 ret = defaultdict(lambda: defaultdict(list))
 for seed in range(seed_start, seed_end):
-    print(seed)
     file = './results/extended_finalpass_scores_seed' + \
         str(seed) + '_degcorTrue_optimTrue.txt'
 
