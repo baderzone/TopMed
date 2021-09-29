@@ -111,7 +111,9 @@ venn3(subsets=(selected_dist, selected_special, selected_dist_special, selected_
 
 fig1 = plt.gcf()
 plt.plot()
-fig1.suptitle('Strongly Selected Genes over 100 runs ')
+plt_title = 'Strongly Selected Genes over ' + \
+    str(seed_end - seed_start) + ' runs '
+fig1.suptitle(plt_title)
 fig1.savefig('./results/venn_decisive.png')
 plt.close()
 
