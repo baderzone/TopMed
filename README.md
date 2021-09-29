@@ -1,5 +1,6 @@
 #TopMed \
 #create virtual environment:\
+cd TopMed
 sh venv.sh 
 
 #1 full run \
