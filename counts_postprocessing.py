@@ -74,9 +74,6 @@ decisive_onlydf = decisivestats_df[decisivestats_df['prob_selected']
 decisive_onlydf.to_csv(
     './results/decisive_summarystats.txt', index=False, sep='\t')
 
-print(len(decisive_onlydf))
-pdb.set_trace()
-
 
 s111 = sum(decisive_onlydf['bestgene_breakdown'] == 's111')
 selected_dist_ppi_special = s111

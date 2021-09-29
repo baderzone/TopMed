@@ -65,6 +65,10 @@ def read_gene_file(file, annotated_only=False, delimiter='\t'):
 
     logger.info('%d skipped (unannotated) genes', n_skipped)
 
+    # m = pd.DataFrame.from_dict(ret, orient='index')
+    # m = m[['chromosome', 'gene_tss', 'gene_end']]
+    # m.to_csv('GeneType_GRCh38p13_condensed.txt', sep='\t')
+
     return(ret)
 
 
@@ -181,7 +185,9 @@ def get_network(k, FLANKDIST, TopMedData_dir, phenotype):
 
     # Genes information from ensembl
     gene_file = TopMedData_dir + 'GeneType_GRCh38p13.txt'
-    gene_bp_dict = read_gene_file(gene_file)
+    gene_bp_df = pd.read_csv(gene_file, sep='\t')
+    gene_bp_df = gene_bp_df.set_index('gene')
+    gene_bp_dict = gene_bp_df.to_dict(orient="index")
 
     # for each variant, a list of all genes in the chromosome sorted by distance
     phen_dict = get_snp_gene_distance(gene_bp_dict, snp_bp_dict)

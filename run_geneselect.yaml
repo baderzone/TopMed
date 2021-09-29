@@ -22,3 +22,10 @@ protein_gene_file: ./data/Protein/uniprot_gene.tab
 #next, upload this list/file to ensembl to download location file
 #Make sure to use GRCh38.p13 version and under Filters {Variant source: sbSNP, Variant name: choose file}
 #name downloaded location file as "phenotype_GWAScat_rsid_GRCh38p13.txt", MAKE sure tsv! save in data dir
+
+
+# m = pd.read_csv('./data_raw/TopMed/GeneType_GRCh38p13_master.txt', sep='\t')
+# m.rename(columns={'Gene name': 'gene', 'Chromosome/scaffold name': 'chromosome', 'Transcription start site (TSS)': 'gene_tss', 'Gene end (bp)': 'gene_end'}, inplace=True)
+# m = m[['gene', 'chromosome', 'gene_tss', 'gene_end']]
+# m = m.drop_duplicates(subset=['gene'])
+# m.to_csv('./data/TopMed/GeneType_GRCh38p13.txt', sep='\t', index=False)

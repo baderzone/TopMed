@@ -20,6 +20,7 @@ from scipy.special import gammaln
 from scipy import optimize
 from scipy.stats import cauchy
 from scipy.stats import iqr
+import csv
 
 import pdb
 
@@ -987,9 +988,8 @@ def get_specialcounts(network_dict, gene_special ):
     special_counts = dict()
     for locus in network_dict:
         for gene in network_dict[locus]:
-           # pdb.set_trace()
             for special in gene_special[gene]:
-               # pdb.set_trace()
+
                 if special in special_counts:
                     special_counts[special] +=1
                 else:
@@ -1545,7 +1545,13 @@ def main():
 
     # Quick Data check - gene names matching?
     # file downloaded from ensembl, gene names
-    gene_bp_dict = utils_data.read_gene_file(gene_file)
+
+
+    gene_bp_df = pd.read_csv(gene_file, sep='\t')
+    gene_bp_df = gene_bp_df.set_index('gene')
+    gene_bp_dict = gene_bp_df.to_dict(orient="index")
+
+
     ensembl_genes = set(gene_bp_dict.keys())
 
     # external genes:
