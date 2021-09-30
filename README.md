@@ -3,6 +3,8 @@
 cd TopMed \
 sh venv.sh 
 
+source env/bin/activate
+
 #1 full run \
 #run gene_selection algorithm \
 python3 gene_selection.py \
